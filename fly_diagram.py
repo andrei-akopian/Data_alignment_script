@@ -53,7 +53,7 @@ def export(resoult_graphs):
       line+='\n'
     lines.append(line)
     #write into a resoults.csv file
-  with open('resoults.csv','w') as file:
+  with open('results.csv','w') as file:
     for line in lines:
       file.write(line)
 
