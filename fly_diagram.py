@@ -69,7 +69,7 @@ def body(filename,times):
 
 #generate times
 times=[]
-for i in range(-44,33,2):
+for i in range(-50,51,2):
   times.append(i)
 #filename
 filename='data.csv'
