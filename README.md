@@ -1,3 +1,2 @@
 # Diagram
-Calculates the average of multiple graphs with different x-values.
-The script takes in colums of data which where the first colum is the 
+The script calculates the avarage of multiple graphs from a csv file and exports it into a "resoult.csv". Wiki has the usage instructions as well as algorithm description.
