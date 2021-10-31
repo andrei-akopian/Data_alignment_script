@@ -16,11 +16,7 @@ def import_graphs(filename):
     for j in range(0,size,2):
       if elements[j]!='':
         graphs[j//2].append( (float(elements[j]), float(elements[j+1])) )
-  print()
-  print(graphs[0])
-  print()
   graphs=[sorted(g, key=lambda p: p[0]) for g in graphs]
-  print(graphs)
   return graphs
 
 #applys the formulla
@@ -36,6 +32,9 @@ def export(resoult_graphs):
   lines=[]
   line=''
   Sum=0
+  for headings in range(len(resoult_graphs)):
+    line+='x'+str(headings)+',y'+str(headings)+','
+  lines.append(line+'x-total,y-total\n')
   for i in range(len(resoult_graphs[0])):
     line=''
     Sum=[0,0]
@@ -49,9 +48,7 @@ def export(resoult_graphs):
     #put the sum at the end
     if Sum[1]!=0:
       line+=str(resoult_graphs[0][i][0])+','+str(Sum[0]/Sum[1])+'\n'
-    else:
-      line+='\n'
-    lines.append(line)
+      lines.append(line)
     #write into a resoults.csv file
   with open('results.csv','w') as file:
     for line in lines:
@@ -69,12 +66,11 @@ def body(filename,times):
 
 #generate times
 times=[]
-for i in range(-50,51,2):
+for i in range(-60,60,1):
   times.append(i)
+
 #filename
-filename='data.csv'
+filename='/Users/andrei/Documents/PythonProgs/flyprog/data.csv'
 
 #RUN
 body(filename,times)
-
-
